@@ -7,7 +7,8 @@
     <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}img{border-style:none}button{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button{overflow:visible}button{text-transform:none}[type=button],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}h1{margin:0}button{background-color:transparent;background-image:none;padding:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*{box-sizing:border-box;border:0 solid #e2e8f0}img{border-style:solid}button{cursor:pointer}h1{font-size:inherit;font-weight:inherit}button{padding:0;line-height:inherit;color:inherit}img,svg{display:block;vertical-align:middle}img{max-width:100%;height:auto}.bg-gray-900{background-color:#1a202c}.flex{display:flex}.float-right{float:right}.font-bold{font-weight:700}.h-6{height:1.5rem}.h-8{height:2rem}.focus\:outline-none:focus{outline:0}.fill-current{fill:currentColor}.text-center{text-align:center}.text-gray-500{color:#a0aec0}.text-orange-500{color:#ed8936}.hover\:text-white:hover{color:#fff}.focus\:text-white:focus{color:#fff}.text-4xl{font-size:2.25rem}.w-6{width:1.5rem}    </style>
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}img{border-style:none}button{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button{overflow:visible}button{text-transform:none}[type=button],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}h1{margin:0}button{background-color:transparent;background-image:none;padding:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*{box-sizing:border-box;border:0 solid #e2e8f0}img{border-style:solid}button{cursor:pointer}h1{font-size:inherit;font-weight:inherit}button{padding:0;line-height:inherit;color:inherit}img,svg{display:block;vertical-align:middle}img{max-width:100%;height:auto}.bg-white{background-color:#fff}.bg-gray-900{background-color:#1a202c}.border-gray-200{border-color:#edf2f7}.border-b{border-bottom-width:1px}.flex{display:flex}.items-center{align-items:center}.justify-start{justify-content:flex-start}.float-right{float:right}.font-bold{font-weight:700}.h-6{height:1.5rem}.h-8{height:2rem}.mr-2{margin-right:.5rem}.focus\:outline-none:focus{outline:0}.pr-0{padding-right:0}.pt-2{padding-top:.5rem}.pl-2{padding-left:.5rem}.pr-4{padding-right:1rem}.fixed{position:fixed}.absolute{position:absolute}.top-0{top:0}.right-0{right:0}.left-0{left:0}.fill-current{fill:currentColor}.text-center{text-align:center}.text-gray-500{color:#a0aec0}.text-gray-700{color:#4a5568}.text-orange-500{color:#ed8936}.hover\:text-gray-800:hover{color:#2d3748}.focus\:text-gray-800:focus{color:#2d3748}.text-4xl{font-size:2.25rem}.w-6{width:1.5rem}@media (min-width:768px){.md\:h-20{height:5rem}.md\:ml-2{margin-left:.5rem}.md\:mt-6{margin-top:1.5rem}.md\:pt-0{padding-top:0}}
+    </style>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -22,16 +23,13 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <header class="flex bg-gray-900">
-      <div class="float-right">
-        <amp-img class="h-8" src="img/logo-inverted.svg" height="18" alt="Workcation" />
-      </div>
-      <div>
-        <button type="button" class="text-gray-500 hover:text-white focus:text-white focus:outline-none">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-          </svg>
-        </button>
-      </div>
-    </header>
+  <header class="flex fixed justify-start items-center md:h-20 bg-white border-b border-gray-200 left-0 top-0 right-0 pl-2 pr-4 pt-2 md:pt-0">
+    <div class="md:mt-6 md:ml-2 top-0 pr-0 absolute top-0 mr-2">
+      <button type="button" class="text-gray-700 hover:text-gray-800 focus:text-gray-800 focus:outline-none">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
 </html>
