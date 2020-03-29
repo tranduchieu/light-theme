@@ -17,6 +17,8 @@
     "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "prettier": "^2.0.2",
+    "prettier-eslint": "^9.0.1"
   }
 }
