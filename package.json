@@ -5,9 +5,8 @@
   "license": "MIT",
   "scripts": {
     "tailwind": "postcss css/tailwind.css -o public/build/tailwind.css",
-    "build": "NODE_ENV=production postcss css/tailwind.css -o amp/style.css",
-    "dev": "live-server public",
-    "amp": "live-server amp"
+    "build": "NODE_ENV=production postcss css/tailwind.css -o public/build/output.css",
+    "dev": "live-server public"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
