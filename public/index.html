@@ -13,6 +13,16 @@
       src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
       async=""
     ></script>
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
 
     <meta
       name="viewport"
@@ -109,15 +119,26 @@
           </svg>
         </button>
       </div>
-      <a href="#" class="mx-auto inline-block mb-1 md:mb-0 pb-0">
-        <amp-img
-          src="./img/logo.png"
-          width="96"
-          height="27"
-          layout="fixed"
-          class="my-0 mx-auto"
-        />
-      </a>
+
+      <amp-list
+        class="mx-auto"
+        src="https://homekit.pro/api/shop"
+        height="30"
+        width="100"
+        layout="fixed"
+      >
+        <template type="amp-mustache">
+          <a href="#" class="mx-auto inline-block mb-1 md:mb-0 pb-0">
+            <amp-img
+              src="https://{{squareLogo.bucket}}.imgix.net/{{squareLogo.filename}}"
+              height="27"
+              layout="fill"
+              class="my-0 mx-auto"
+            />
+          </a>
+        </template>
+      </amp-list>
+
       <div
         class="pt-4 md:mt-2 flex justify-center flex-no-wrap absolute top-0 right-0 pr-6 m-0 p-0"
       >
