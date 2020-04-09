@@ -121,20 +121,30 @@
       </div>
 
       <amp-list
-        class="mx-auto"
+        class="mx-auto inline-block mb-1 md:mb-0 pb-0"
         src="https://homekit.pro/api/shop"
-        height="30"
-        width="100"
-        layout="fixed"
+        height="50"
+        width="200"
       >
         <template type="amp-mustache">
-          <a href="#" class="mx-auto inline-block mb-1 md:mb-0 pb-0">
+          <a href="#">
+            {{#landscapeLogo}}
             <amp-img
-              src="https://{{squareLogo.bucket}}.imgix.net/{{squareLogo.filename}}"
-              height="27"
-              layout="fill"
+              src="https://{{landscapeLogo.bucket}}.imgix.net/{{landscapeLogo.filename}}"
+              height="50"
+              width="200"
+              layout="flex-item"
               class="my-0 mx-auto"
             />
+            {{/landscapeLogo}} {{^landscapeLogo}} {{#squareLogo}}
+            <amp-img
+              src="https://{{squareLogo.bucket}}.imgix.net/{{squareLogo.filename}}"
+              height="50"
+              width="50"
+              layout="flex-item"
+              class="my-0 mx-auto rounded"
+            />
+            {{/squareLogo}} {{/landscapeLogo}}
           </a>
         </template>
       </amp-list>
