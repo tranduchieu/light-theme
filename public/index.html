@@ -122,7 +122,7 @@
 
       <amp-list
         class="mx-auto inline-block mb-1 md:mb-0 pb-0"
-        src="/api/shop"
+        src="https://homekit.pro/api/shop"
         height="50"
         width="200"
       >
@@ -191,7 +191,7 @@
             height="1000"
             width="300"
             layout="responsive"
-            src="/api/menus"
+            src="https://homekit.pro/api/menus"
             binding="no"
           >
             <li>
@@ -232,5 +232,22 @@
         </ul>
       </nav>
     </amp-sidebar>
+    <main id="content" role="main" class="mt-16 md:mt-20">
+      <h1>Hello world</h1>
+      <amp-list
+        load-more="auto"
+        height="1000"
+        width="300"
+        layout="responsive"
+        src="https://homekit.pro/api/boxes"
+        binding="no"
+      >
+        <template type="amp-mustache">
+          <div>
+            <a href="/{{slug}}">{{ name }}</a>
+          </div>
+        </template>
+      </amp-list>
+    </main>
   </body>
 </html>
