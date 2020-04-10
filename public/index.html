@@ -122,7 +122,7 @@
 
       <amp-list
         class="mx-auto inline-block mb-1 md:mb-0 pb-0"
-        src="https://homekit.pro/api/shop"
+        src="/api/shop"
         height="50"
         width="200"
       >
@@ -186,6 +186,23 @@
       </div>
       <nav class="ampstart-sidebar-nav ampstart-nav">
         <ul class="list-reset m0 p0 ampstart-label">
+          <amp-list
+            load-more="auto"
+            height="1000"
+            width="300"
+            layout="responsive"
+            src="/api/menus"
+            binding="no"
+          >
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <template type="amp-mustache">
+              <li>
+                <a href="/{{slug}}">{{name}}</a>
+              </li>
+            </template>
+          </amp-list>
           <li>
             <a href="landing.amp.html" class="text-decoration-none block 22">
               <amp-img
