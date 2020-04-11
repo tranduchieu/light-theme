@@ -172,7 +172,7 @@
 
     <amp-sidebar
       id="header-sidebar"
-      class="px-6"
+      class="px-6 bg-orange-100"
       style="width: 300px;"
       layout="nodisplay"
     >
@@ -190,20 +190,20 @@
           ✕
         </div>
       </div>
+      <amp-list
+        src="https://homekit.pro/api/shop"
+        binding="no"
+        single-item
+        height="50"
+      >
+        <template type="amp-mustache">
+          <a href="">
+            <h1 class="font-bold">{{name}}</h1>
+          </a>
+        </template>
+      </amp-list>
       <nav class="ampstart-sidebar-nav ampstart-nav">
         <ul class="list-reset m0 p0 ampstart-label">
-          <amp-list
-            src="https://homekit.pro/api/shop"
-            binding="no"
-            single-item
-            height="50"
-          >
-            <template type="amp-mustache">
-              <a href="">
-                <h1>{{name}}</h1>
-              </a>
-            </template>
-          </amp-list>
           <amp-list
             load-more="auto"
             height="1000"
