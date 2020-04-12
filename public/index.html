@@ -23,6 +23,11 @@
       custom-template="amp-mustache"
       src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
     ></script>
+    <script
+      async
+      custom-element="amp-accordion"
+      src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+    ></script>
 
     <meta
       name="viewport"
@@ -202,12 +207,13 @@
           </a>
         </template>
       </amp-list>
+
       <nav class="ampstart-sidebar-nav ampstart-nav">
         <ul class="list-reset m0 p0 ampstart-label">
           <amp-list
             load-more="auto"
-            height="1000"
             width="300"
+            height="300"
             layout="responsive"
             src="https://homekit.pro/api/menus"
             binding="no"
@@ -215,9 +221,27 @@
             <li>
               <a href="/">Home</a>
             </li>
+
             <template type="amp-mustache">
+              {{^childrenCount}}
               <li>
                 <a href="/{{slug}}">{{name}}</a>
+              </li>
+              {{/childrenCount}} {{#childrenCount}}
+              <li>
+                <amp-accordion>
+                  <section>
+                    <header>{{name}}</header>
+                    <ul>
+                      {{#children.items}}
+                      <li>
+                        <a href="/{{slug}}">{{name}}</a>
+                      </li>
+                      {{/children.items}}
+                    </ul>
+                  </section>
+                </amp-accordion>
+                {{/childrenCount}}
               </li>
             </template>
           </amp-list>
