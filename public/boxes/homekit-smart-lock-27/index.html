@@ -33,7 +33,7 @@
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
     />
-    <link rel="stylesheet" href="./build/tailwind.css" />
+    <link rel="stylesheet" href="../../build/tailwind.css" />
 
     <script type="application/ld+json">
       {
@@ -127,7 +127,7 @@
 
       <amp-list
         class="mx-auto inline-block mb-1 md:mb-0 pb-0"
-        src="https://homekit.pro/api/shop"
+        src="https://demo.salesbox.vn/api/shop"
         binding="no"
         single-item
         height="50"
@@ -196,7 +196,7 @@
         </div>
       </div>
       <amp-list
-        src="https://homekit.pro/api/shop"
+        src="https://demo.salesbox.vn/api/shop"
         binding="no"
         single-item
         height="50"
@@ -215,7 +215,7 @@
             width="300"
             height="300"
             layout="responsive"
-            src="https://homekit.pro/api/menus"
+            src="https://demo.salesbox.vn/api/menus"
             binding="no"
           >
             <li>
@@ -225,7 +225,7 @@
             <template type="amp-mustache">
               {{^childrenCount}}
               <li>
-                <a href="/{{slug}}">{{name}}</a>
+                <a href="/boxes/{{slug}}">{{name}}</a>
               </li>
               {{/childrenCount}} {{#childrenCount}}
               <li>
@@ -235,7 +235,7 @@
                     <ul>
                       {{#children.items}}
                       <li>
-                        <a href="/{{slug}}">{{name}}</a>
+                        <a href="/boxes/{{slug}}">{{name}}</a>
                       </li>
                       {{/children.items}}
                     </ul>
@@ -255,7 +255,7 @@
         height="1000"
         width="300"
         layout="responsive"
-        src="https://homekit.pro/api?path=boxesSOURCE_PATH"
+        src="https://demo.salesbox.vn/api/boxes?path=SOURCE_PATH"
         binding="no"
       >
         <template type="amp-mustache">
