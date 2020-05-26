@@ -1,7 +1,10 @@
 module.exports = {
+  purge: {
+    content: ['./public/**/*.html'],
+  },
   theme: {
     extend: {},
   },
   variants: {},
-  plugins: [],
+  plugins: [require('autoprefixer')],
 };
