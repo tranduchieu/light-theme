@@ -225,7 +225,11 @@
             <template type="amp-mustache">
               {{^childrenCount}}
               <li>
+                {{^singleBox}}
                 <a href="/boxes/{{slug}}">{{name}}</a>
+                {{/singleBox}} {{#singleBox}}
+                <a href="/{{singleBox.slug}}">{{name}}</a>
+                {{/singleBox}}
               </li>
               {{/childrenCount}} {{#childrenCount}}
               <li>
@@ -249,21 +253,24 @@
       </nav>
     </amp-sidebar>
     <main id="content" role="main" class="mt-16 md:mt-20 block">
-      <h1>Hello world</h1>
-      <amp-list
-        load-more="auto"
-        height="1000"
-        width="300"
-        layout="responsive"
-        src="https://demo.salesbox.vn/api/boxes?path=SOURCE_PATH"
-        binding="no"
-      >
-        <template type="amp-mustache">
-          <div>
-            <a href="/{{slug}}">{{ name }}</a>
-          </div>
-        </template>
-      </amp-list>
+      <section class="bg-white py-8">
+        <div class="container mx-auto items-center flex-wrap pt-4 pb-12">
+          <amp-list
+            load-more="auto"
+            height="1000"
+            width="300"
+            layout="responsive"
+            src="https://demo.salesbox.vn/api/boxes?path=SOURCE_PATH"
+            binding="no"
+          >
+            <template type="amp-mustache">
+              <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="/{{slug}}">ffff</a>
+              </div>
+            </template>
+          </amp-list>
+        </div>
+      </section>
     </main>
   </body>
 </html>
