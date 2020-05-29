@@ -134,7 +134,7 @@
         width="200"
       >
         <template type="amp-mustache">
-          <a href="#">
+          <a href="/">
             {{#landscapeLogo}}
             <amp-img
               src="https://{{landscapeLogo.bucket}}.imgix.net/{{landscapeLogo.filename}}"
@@ -239,7 +239,11 @@
                     <ul>
                       {{#children.items}}
                       <li>
+                        {{^singleBox}}
                         <a href="/boxes/{{slug}}">{{name}}</a>
+                        {{/singleBox}} {{#singleBox}}
+                        <a href="/{{singleBox.slug}}">{{name}}</a>
+                        {{/singleBox}}
                       </li>
                       {{/children.items}}
                     </ul>
