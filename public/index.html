@@ -35,6 +35,14 @@
     />
     <link rel="stylesheet" href="./build/tailwind.css" />
 
+    <style amp-custom>
+      amp-list div[role='list'] {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    </style>
+
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -258,31 +266,30 @@
     </amp-sidebar>
     <main id="content" role="main" class="mt-16 md:mt-20 block">
       <section class="bg-white py-8">
-        <div class="container mx-auto items-center flex-wrap pt-4 pb-12">
-          <amp-list
-            load-more="auto"
-            height="100"
-            width="300"
-            layout="responsive"
-            src="https://demo.salesbox.vn/api/boxes?path=SOURCE_PATH"
-            binding="no"
-          >
-            <template type="amp-mustache">
-              <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                <a href="/{{slug}}">
-                  <amp-img
-                    src="{{image.src}}"
-                    width="340"
-                    height="340"
-                    layout="responsive"
-                    alt="{{name}}"
-                  >
-                  </amp-img>
-                </a>
-              </div>
-            </template>
-          </amp-list>
-        </div>
+        <amp-list
+          load-more="auto"
+          height="100"
+          width="100"
+          layout="responsive"
+          src="https://demo.salesbox.vn/api/boxes?path=SOURCE_PATH"
+          binding="no"
+          class="container mx-auto pt-4 pb-12"
+        >
+          <template type="amp-mustache">
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+              <a href="/{{slug}}">
+                <amp-img
+                  src="{{image.src}}"
+                  width="340"
+                  height="340"
+                  layout="responsive"
+                  alt="{{name}}"
+                >
+                </amp-img>
+              </a>
+            </div>
+          </template>
+        </amp-list>
       </section>
     </main>
   </body>
