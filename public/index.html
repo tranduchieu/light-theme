@@ -276,12 +276,13 @@
           class="cards container mx-auto pt-4 pb-12"
         >
           <template type="amp-mustache">
+            {{^firstImage.isVertical}}
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
               <div class="max-w-sm rounded overflow-hidden shadow-lg">
                 <amp-img
-                  src="{{image.src}}"
-                  width="340"
-                  height="340"
+                  src="{{firstImage.src}}"
+                  width="{{firstImage.width}}"
+                  height="{{firstImage.height}}"
                   layout="responsive"
                   alt="{{name}}"
                   class="w-full"
@@ -294,6 +295,7 @@
                 </div>
               </div>
             </div>
+            {{/firstImage.isVertical}}
           </template>
         </amp-list>
       </section>
