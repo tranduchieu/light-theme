@@ -283,14 +283,18 @@
                 style="border-radius: 1em;"
               >
                 <div class="px-6 py-4">
-                  {{^latestMenu}}
-                  <div>
+                  {{#latestMenu}}
+                  <span class="uppercase">
                     {{latestMenu.name}}
-                  </div>
+                  </span>
+                  {{/latestMenu}} {{^latestMenu}}
+                  <span class="uppercase">
+                    {{seller.name}}
+                  </span>
                   {{/latestMenu}}
-                  <div class="font-bold text-xl mb-2">
+                  <h3 class="font-bold text-xl mb-2">
                     {{name}}
-                  </div>
+                  </h3>
                 </div>
                 <amp-img
                   src="{{firstImage.src}}"
