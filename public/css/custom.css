@@ -1,0 +1,4 @@
+amp-list.cards div[role='list'] {
+  display: flex;
+  flex-wrap: wrap;
+}

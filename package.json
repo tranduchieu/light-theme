@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "tailwind": "postcss css/tailwind.css -o public/build/tailwind.css",
-    "build": "NODE_ENV=production postcss css/tailwind.css -o public/build/output.css",
+    "tailwind": "postcss css/tailwind.css -o public/css/tailwind.css",
+    "postbuild": "cat public/build/output.css public/css/custom.css | postcss -u autoprefixer cssnano > public/build/cat.css",
+    "build": "NODE_ENV=production postcss public/css/tailwind.css -o public/build/output.css",
     "dev": "live-server public"
   },
   "dependencies": {

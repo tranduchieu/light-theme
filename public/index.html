@@ -33,14 +33,8 @@
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
     />
-    <link rel="stylesheet" href="./build/tailwind.css" />
-
-    <style amp-custom>
-      amp-list.cards div[role='list'] {
-        display: flex;
-        flex-wrap: wrap;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
 
     <script type="application/ld+json">
       {
@@ -329,11 +323,11 @@
               class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col outline-none"
             >
               <div
-                class="bg-cover relative max-w-sm overflow-hidden shadow-lg flex-1 flex flex-col"
-                style="border-radius: 1em;background-image: url({{firstImage.src}}"
+                class="bg-cover bg-center relative max-w-sm overflow-hidden shadow-lg flex-1 flex flex-col h-64"
+                style="height: 20em; border-radius: 1em;background-image: url({{firstImage.src}}"
               >
                 <div
-                  class="absolute flex flex-1 left-0 bottom-0 w-full h-full z-10"
+                  class="flex flex-1 left-0 bottom-0 w-full h-full z-10"
                   style="
                     background-image: linear-gradient(
                       180deg,
