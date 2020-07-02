@@ -28,6 +28,11 @@
       custom-element="amp-accordion"
       src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
     ></script>
+    <script
+      async
+      custom-element="amp-carousel"
+      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+    ></script>
 
     <meta
       name="viewport"
@@ -269,12 +274,12 @@
           class="cards container mx-auto pt-4 pb-12"
         >
           <template type="amp-mustache">
-            {{^firstImage.isVertical}}
+            {{^featured}} {{^firstImage.isVertical}}
             <div
               class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col outline-none"
             >
               <div
-                class="max-w-sm overflow-hidden shadow-lg flex-1 flex flex-col"
+                class="overflow-hidden shadow-lg flex-1 flex flex-col"
                 style="border-radius: 1em;"
               >
                 <div
@@ -323,7 +328,7 @@
               class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col outline-none"
             >
               <div
-                class="bg-cover bg-center relative max-w-sm overflow-hidden shadow-lg flex-1 flex flex-col h-64"
+                class="bg-cover bg-center relative overflow-hidden shadow-lg flex-1 flex flex-col h-64"
                 style="height: 20em; border-radius: 1em;background-image: url({{firstImage.src}}"
               >
                 <div
@@ -357,7 +362,92 @@
                 </div>
               </div>
             </div>
-            {{/firstImage.isVertical}}
+            {{/firstImage.isVertical}} {{/featured}} {{#featured}}
+            <amp-carousel
+              width="400"
+              height="300"
+              layout="responsive"
+              type="slides"
+              autoplay
+              delay="3000"
+            >
+              <div>
+                <div class="blue-box">
+                  This is a blue box.
+                </div>
+              </div>
+              <div>
+                <div class="red-box">
+                  This is a red box.
+                </div>
+              </div>
+              <figure>
+                <amp-img
+                  src="{{firstImage.src}}"
+                  width="2"
+                  height="1"
+                  layout="responsive"
+                  alt=""
+                >
+                </amp-img>
+                <figcaption class="absolute w-full h-full top-0">
+                  <div><h1>fffff</h1></div>
+                </figcaption>
+              </figure>
+              <figure>
+                <amp-img
+                  src="{{firstImage.src}}"
+                  width="2"
+                  height="1"
+                  layout="responsive"
+                  alt=""
+                >
+                </amp-img>
+                <figcaption class="absolute w-full h-full top-0">
+                  <div><h1>fffff</h1></div>
+                </figcaption>
+              </figure>
+            </amp-carousel>
+
+            <div
+              class="w-full md:w-2/3 lg:w-2/3 xl:w-1/2 p-6 flex flex-col outline-none"
+            >
+              <div
+                class="bg-cover bg-center relative overflow-hidden shadow-lg flex-1 flex flex-col h-64"
+                style="height: 20em; border-radius: 1em;background-image: url({{firstImage.src}}"
+              >
+                <div
+                  class="flex flex-1 left-0 bottom-0 w-full h-full z-10"
+                  style="
+                    background-image: linear-gradient(
+                      180deg,
+                      transparent,
+                      rgba(0, 0, 0, 0.5)
+                    );
+                  "
+                >
+                  <div class="flex flex-1 items-end">
+                    <div class="px-6 py-4 flex-1 flex flex-col">
+                      {{#latestMenu}}
+                      <span class="uppercase font-medium text-gray-400 text-sm">
+                        {{latestMenu.name}}
+                      </span>
+                      {{/latestMenu}} {{^latestMenu}}
+                      <span class="uppercase font-medium text-gray-400 text-sm">
+                        {{seller.name}}
+                      </span>
+                      {{/latestMenu}}
+                      <div class="flex-1 pt-1">
+                        <h3 class="font-bold text-xl mb-2 text-white">
+                          {{name}}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/featured}}
           </template>
         </amp-list>
       </section>
