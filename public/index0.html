@@ -28,11 +28,7 @@
       custom-element="amp-accordion"
       src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
     ></script>
-    <script
-      async
-      custom-element="amp-carousel"
-      src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"
-    ></script>
+
     <meta
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
@@ -278,23 +274,18 @@
             <div
               class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col outline-none"
             >
-              <a
-                href="/{{slug}}"
+              <div
                 class="overflow-hidden shadow-lg flex-1 flex flex-col"
                 style="border-radius: 1em;"
               >
-                <div class="relative">
-                  <amp-img
-                    src="{{firstImage.src}}?w=354&h=236&fit=crop"
-                    width="354"
-                    height="236"
-                    layout="responsive"
-                    class="flex flex-1"
-                    alt="{{name}}"
-                  >
-                  </amp-img>
+                <div
+                  class="bg-cover bg-center h-48 relative"
+                  style="
+                    background-image: url({{firstImage.src}}?w=384&h=182);
+                  "
+                >
                   <div
-                    class="absolute left-0 bottom-0 w-full h-full z-10 flex flex-1"
+                    class="absolute left-0 bottom-0 w-full h-full z-10"
                     style="
                       background-image: linear-gradient(
                         180deg,
@@ -304,7 +295,7 @@
                     "
                   >
                     {{#hasProducts}}
-                    <div class="p-4 flex items-end text-white">
+                    <div class="p-4 h-48 flex items-end text-white">
                       <span
                         class="opacity-75 inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
                       >
@@ -330,7 +321,6 @@
                     {{/hasProducts}}
                   </div>
                 </div>
-
                 <div class="px-6 py-4 flex-1 flex flex-col">
                   {{#latestMenu}}
                   <span class="uppercase font-medium text-gray-500 text-sm">
@@ -347,91 +337,78 @@
                     </h3>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
             {{/firstImage.isVertical}} {{#firstImage.isVertical}}
             <div
               class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col outline-none"
             >
-              <a
-                href="/{{slug}}"
-                class="overflow-hidden shadow-lg flex-1 flex flex-col"
-                style="border-radius: 1em;"
+              <div
+                class="bg-cover bg-center relative overflow-hidden shadow-lg flex-1 flex flex-col"
+                style="height: 20em; border-radius: 1em;background-image: url({{firstImage.src}}"
               >
-                <div class="relative">
-                  <amp-img
-                    src="{{firstImage.src}}?w=236&h=354&fit=crop"
-                    width="236"
-                    height="354"
-                    layout="responsive"
-                    class="flex flex-1"
-                    alt="{{name}}"
-                  >
-                  </amp-img>
-                  <div
-                    class="absolute flex flex-1 left-0 bottom-0 w-full h-full z-10"
-                    style="
-                      background-image: linear-gradient(
-                        180deg,
-                        transparent,
-                        rgba(0, 0, 0, 0.5)
-                      );
-                    "
-                  >
-                    <div class="flex flex-1 flex-col justify-between">
-                      {{#hasProducts}}
-                      <div class="p-4 flex items-start text-white">
+                <div
+                  class="flex flex-1 left-0 bottom-0 w-full h-full z-10"
+                  style="
+                    background-image: linear-gradient(
+                      180deg,
+                      transparent,
+                      rgba(0, 0, 0, 0.5)
+                    );
+                  "
+                >
+                  <div class="flex flex-1 flex-col justify-between">
+                    {{#hasProducts}}
+                    <div class="p-4 flex items-start text-white">
+                      <span
+                        class="opacity-75 inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="far"
+                          data-icon="shopping-bag"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="h-4 w-4 inline-block mr-1"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z"
+                            class=""
+                          ></path>
+                        </svg>
+                        {{products.totalCount}} sản phẩm</span
+                      >
+                    </div>
+                    {{/hasProducts}}
+                    <div class="flex items-end">
+                      <div class="px-6 py-4 flex-1 flex flex-col">
+                        {{#latestMenu}}
                         <span
-                          class="opacity-75 inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
+                          class="uppercase font-medium text-gray-400 text-sm"
                         >
-                          <svg
-                            aria-hidden="true"
-                            focusable="false"
-                            data-prefix="far"
-                            data-icon="shopping-bag"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512"
-                            class="h-4 w-4 inline-block mr-1"
-                          >
-                            <path
-                              fill="currentColor"
-                              d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z"
-                              class=""
-                            ></path>
-                          </svg>
-                          {{products.totalCount}} sản phẩm</span
+                          {{latestMenu.name}}
+                        </span>
+                        {{/latestMenu}} {{^latestMenu}}
+                        <span
+                          class="uppercase font-medium text-gray-400 text-sm"
                         >
-                      </div>
-                      {{/hasProducts}}
-                      <div class="flex items-end">
-                        <div class="px-6 py-4 flex-1 flex flex-col">
-                          {{#latestMenu}}
-                          <span
-                            class="uppercase font-medium text-gray-400 text-sm"
-                          >
-                            {{latestMenu.name}}
-                          </span>
-                          {{/latestMenu}} {{^latestMenu}}
-                          <span
-                            class="uppercase font-medium text-gray-400 text-sm"
-                          >
-                            {{seller.name}}
-                          </span>
-                          {{/latestMenu}}
-                          <div class="flex-1 pt-1">
-                            <h3 class="font-bold text-xl mb-2 text-white">
-                              {{name}}
-                            </h3>
-                          </div>
+                          {{seller.name}}
+                        </span>
+                        {{/latestMenu}}
+                        <div class="flex-1 pt-1">
+                          <h3 class="font-bold text-xl mb-2 text-white">
+                            {{name}}
+                          </h3>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
-
             {{/firstImage.isVertical}}{{/isSingleProduct}}
 
             <!-- Single Product -->
@@ -439,16 +416,15 @@
             <div
               class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col outline-none"
             >
-              <a
-                href="/{{slug}}"
+              <div
                 class="overflow-hidden shadow-lg flex-1 flex flex-col"
                 style="border-radius: 1em;"
               >
                 <div class="relative">
                   <amp-img
-                    src="{{firstImage.src}}?w=354&h=236&fit=crop"
-                    width="354"
-                    height="236"
+                    src="{{firstImage.src}}?w=293&h=192&fit=crop"
+                    width="293"
+                    height="192"
                     layout="responsive"
                     class="flex flex-1"
                     alt="{{name}}"
@@ -508,7 +484,7 @@
                     </h3>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
             {{/isSingleProduct}} {{/firstImage}} {{/featured}} {{#featured}}
 
@@ -516,98 +492,64 @@
               class="w-full md:w-2/3 lg:w-2/3 xl:w-1/2 p-6 flex flex-auto flex-col outline-none"
             >
               <div
-                class="overflow-hidden shadow-lg flex-1 flex flex-col"
-                style="border-radius: 1em;"
+                class="bg-cover bg-center relative overflow-hidden shadow-lg flex-1 flex flex-col"
+                style="height: 20em; border-radius: 1em;background-image: url({{firstImage.src}}"
               >
-                <div class="relative flex flex-1">
-                  <amp-carousel
-                    height="236"
-                    width="354"
-                    layout="responsive"
-                    type="slides"
-                    autoplay
-                    class="flex flex-1"
-                    style="border-radius: 1em;"
-                  >
-                    <amp-img
-                      src="{{firstImage.src}}?w=354&h=236&fit=crop"
-                      width="354"
-                      height="236"
-                      layout="responsive"
-                      class="flex flex-1"
-                      alt="{{name}}"
-                      style="border-radius: 1em;"
-                    >
-                    </amp-img>
-
-                    <amp-img
-                      src="{{firstImage.src}}?w=354&h=236&fit=crop"
-                      width="354"
-                      height="236"
-                      layout="responsive"
-                      class="flex flex-1"
-                      alt="{{name}}"
-                      style="border-radius: 1em;"
-                    >
-                    </amp-img>
-                  </amp-carousel>
-                  <div
-                    class="absolute flex flex-1 left-0 bottom-0 w-full h-full z-10"
-                    style="
-                      border-radius: 1em;
-                      background-image: linear-gradient(
-                        180deg,
-                        transparent,
-                        rgba(0, 0, 0, 0.5)
-                      );
-                    "
-                  >
-                    <div class="flex flex-1 flex-col justify-between">
-                      {{#hasProducts}}
-                      <div class="p-4 flex items-start text-white">
+                <div
+                  class="flex flex-1 left-0 bottom-0 w-full h-full z-10"
+                  style="
+                    background-image: linear-gradient(
+                      180deg,
+                      transparent,
+                      rgba(0, 0, 0, 0.5)
+                    );
+                  "
+                >
+                  <div class="flex flex-1 flex-col justify-between">
+                    {{#hasProducts}}
+                    <div class="p-4 flex items-start text-white">
+                      <span
+                        class="opacity-75 inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="far"
+                          data-icon="shopping-bag"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="h-4 w-4 inline-block mr-1"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z"
+                            class=""
+                          ></path>
+                        </svg>
+                        {{products.totalCount}} sản phẩm</span
+                      >
+                    </div>
+                    {{/hasProducts}}
+                    <div class="flex items-end">
+                      <div class="px-6 py-4 flex-1 flex flex-col">
+                        {{#latestMenu}}
                         <span
-                          class="opacity-75 inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs font-bold mr-3"
+                          class="uppercase font-medium text-gray-400 text-sm"
                         >
-                          <svg
-                            aria-hidden="true"
-                            focusable="false"
-                            data-prefix="far"
-                            data-icon="shopping-bag"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512"
-                            class="h-4 w-4 inline-block mr-1"
-                          >
-                            <path
-                              fill="currentColor"
-                              d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z"
-                              class=""
-                            ></path>
-                          </svg>
-                          {{products.totalCount}} sản phẩm</span
+                          {{latestMenu.name}}
+                        </span>
+                        {{/latestMenu}} {{^latestMenu}}
+                        <span
+                          class="uppercase font-medium text-gray-400 text-sm"
                         >
-                      </div>
-                      {{/hasProducts}}
-                      <div class="flex items-end">
-                        <div class="px-6 py-4 flex-1 flex flex-col">
-                          {{#latestMenu}}
-                          <span
-                            class="uppercase font-medium text-gray-400 text-sm"
-                          >
-                            {{latestMenu.name}}
-                          </span>
-                          {{/latestMenu}} {{^latestMenu}}
-                          <span
-                            class="uppercase font-medium text-gray-400 text-sm"
-                          >
-                            {{seller.name}}
-                          </span>
-                          {{/latestMenu}}
-                          <div class="flex-1 pt-1">
-                            <h3 class="font-bold text-xl mb-2 text-white">
-                              {{name}}
-                            </h3>
-                          </div>
+                          {{seller.name}}
+                        </span>
+                        {{/latestMenu}}
+                        <div class="flex-1 pt-1">
+                          <h3 class="font-bold text-xl mb-2 text-white">
+                            {{name}}
+                          </h3>
                         </div>
                       </div>
                     </div>
