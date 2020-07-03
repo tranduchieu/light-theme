@@ -2,3 +2,7 @@ amp-list.cards div[role='list'] {
   display: flex;
   flex-wrap: wrap;
 }
+
+amp-list.cards .amp-carousel-button {
+  display: none;
+}
