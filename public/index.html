@@ -510,7 +510,10 @@
                 </div>
               </a>
             </div>
-            {{/isSingleProduct}} {{/firstImage}} {{/featured}} {{#featured}}
+            {{/isSingleProduct}} {{/firstImage}} {{/featured}}
+
+            <!-- Featured -->
+            {{#featured}}
 
             <div
               class="w-full md:w-2/3 lg:w-2/3 xl:w-1/2 p-6 flex flex-auto flex-col outline-none"
@@ -520,6 +523,8 @@
                 style="border-radius: 1em;"
               >
                 <div class="relative flex flex-1">
+                  {{#hasFeaturedHorizontalImages}}
+
                   <amp-carousel
                     height="236"
                     width="354"
@@ -529,28 +534,20 @@
                     class="flex flex-1"
                     style="border-radius: 1em;"
                   >
+                    {{#featuredHorizontalImages.items}}
                     <amp-img
-                      src="{{firstImage.src}}?w=354&h=236&fit=crop"
+                      src="{{src}}?w=354&h=236&fit=crop"
                       width="354"
                       height="236"
                       layout="responsive"
                       class="flex flex-1"
-                      alt="{{name}}"
+                      alt=""
                       style="border-radius: 1em;"
                     >
                     </amp-img>
-
-                    <amp-img
-                      src="{{firstImage.src}}?w=354&h=236&fit=crop"
-                      width="354"
-                      height="236"
-                      layout="responsive"
-                      class="flex flex-1"
-                      alt="{{name}}"
-                      style="border-radius: 1em;"
-                    >
-                    </amp-img>
+                    {{/featuredHorizontalImages.items}}
                   </amp-carousel>
+                  {{/hasFeaturedHorizontalImages}}
                   <div
                     class="absolute flex flex-1 left-0 bottom-0 w-full h-full z-10"
                     style="
