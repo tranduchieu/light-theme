@@ -358,13 +358,11 @@
                 class="overflow-hidden shadow-lg flex-1 flex flex-col"
                 style="border-radius: 1em;"
               >
-                <div class="relative">
+                <div class="relative flex flex-1">
                   <amp-img
-                    src="{{firstImage.src}}?w=236&h=354&fit=crop"
-                    width="236"
-                    height="354"
-                    layout="responsive"
-                    class="flex flex-1"
+                    src="{{firstImage.src}}"
+                    layout="fill"
+                    class="cover"
                     alt="{{name}}"
                   >
                   </amp-img>
@@ -531,16 +529,14 @@
                     layout="responsive"
                     type="slides"
                     autoplay
-                    class="flex flex-1"
-                    style="border-radius: 1em;"
+                    class="relative flex flex-1"
+                    style="border-radius: 1em; object-fit: cover;"
                   >
                     {{#featuredHorizontalImages.items}}
                     <amp-img
-                      src="{{src}}?w=354&h=236&fit=crop"
-                      width="354"
-                      height="236"
-                      layout="responsive"
-                      class="flex flex-1"
+                      src="{{src}}"
+                      layout="fill"
+                      class="cover"
                       alt=""
                       style="border-radius: 1em;"
                     >
@@ -609,7 +605,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
             </div>
             {{/featured}}

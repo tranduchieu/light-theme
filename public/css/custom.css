@@ -6,3 +6,7 @@ amp-list.cards div[role='list'] {
 amp-list.cards .amp-carousel-button {
   display: none;
 }
+
+amp-list.cards amp-img.cover img {
+  object-fit: cover;
+}
